@@ -1,0 +1,128 @@
+.flexslider {
+
+   
+}
+
+
+
+.container-fluid {
+height:0px auto;
+width:100%;	
+padding:0;
+}
+
+ .content {
+   position: absolute; /* Position the background text */
+  top:140px; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding:40px; /* Some padding */
+ 
+}
+.divider
+{
+	width:5px;
+	height:auto;
+	display:inline-block;
+}
+.banner
+{
+//background-image:url('../imagalgoimages/3.jpg');
+background-color:#000000;
+background-size:cover;
+background-repeat:no-repeat;
+height:100vh;
+margin:0 0 0 0;
+//opacity:0.5;
+}
+header
+{
+padding-right:5px;
+padding-top:8px;
+height:50px;
+opacity:0.7;
+background-color:#ffffff;
+}
+.search_my
+{
+float:right;
+//border:3px solid;
+//height:31px;
+}
+.search1
+{
+height:30px;
+width:150px;
+background-color:#ffffff;
+border:2px solid;
+}
+.button1
+{
+	height:35px;
+	width:40px;
+	border:2px solid;
+	color:#ffffff;
+	background-color:#000000;
+}
+.nav1
+{
+	background-color:#f8f9fa;
+}
+.navbar
+{
+	padding:0px;
+}
+.navbar-nav li
+{
+z-index:1;	
+}
+.navbar-nav li a
+{
+	font-size:17px;
+	padding:15px 60px!important;
+}
+.navbar-nav li a:hover
+{
+border-right:3px solid #ff4f81;
+border-left:3px solid #ff4f81;	
+transition:0.5s all;
+}
+.navbar-light .navbar-nav .nav-link
+{
+	color:#000;
+}
+@media(max-width:1200px){
+	.navbar-nav li
+	{
+		font-size:15px;
+	}
+}
+@media(max-width:992px){
+	.navbar toggler
+	{
+		margin:10px 0px 10px 30px;
+		background-color:#ff4f81;
+	}
+	.navbar-toggler:hover,.navbar-toggler:focus
+	{
+		background-color:#fff;
+		border-color:#ff4f81;
+	
+	}
+	.navbar-light
+	{
+		background-color:#fff;
+	}
+	.navbar-nav li a
+	{
+		text-align:center;
+		background-color:aliceblue;
+	}
+	.navbar li a:hover
+	{
+		background-color:#ff4f81;
+	}
+}
+

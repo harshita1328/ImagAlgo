@@ -1,0 +1,14 @@
+
+header{
+	background-image:url('../pictures/food41.jpg');
+background-size:cover;
+	height:80vh;
+	width:150vh;
+}
+*{
+	
+		background-color:#ee82ee;
+
+	box-sizing:border-box;
+	   
+}

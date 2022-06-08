@@ -1,0 +1,276 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+<link rel="stylesheet" href="gallery-grid.css"
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Autour One' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/hellostyl_2.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+  #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+border-radius: 50%;
+}
+
+#myBtn:hover {
+  background-color: #555;
+} 
+
+#slideshowdiv1 {
+
+  outline: 1px solid #008080;
+  height : 70px;
+  width : 730px;
+}
+</style>
+</head>
+<body onload="slideShow(); stopShow();">
+<button onclick="topFunction()" id="myBtn" title="Go to top" style="background-color:blue;"><i class="fa fa-arrow-up"></i></button>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+  <script type = "text/javascript">
+   // creates array and holds images
+var imageArray = ['Bogo1.png', 'Bogo2.png', 'Bogo3.png', 'Bogo4.png'
+ , 'Bogo5.png','Bogo6.png','Bogo7.png','Bogo8.png'];
+var steps = 
+["For sorting initially following elements are given:",
+"Bogo sort function recrsively permute all it's input element until a sorted sequence of input element is found",
+"Bogo sort function recrsively permute all it's input element until a sorted sequence of input element is found",
+"Bogo sort function recrsively permute all it's input element until a sorted sequence of input element is found",
+"Bogo sort function recrsively permute all it's input element until a sorted sequence of input element is found",
+"Bogo sort function recrsively permute all it's input element until a sorted sequence of input element is found",
+"This process of generating the permutation from the given input continues until a sorted sequence of elements is obtained otherwise goes on and on in continuation",
+"However this can continue for any number of times for generating the permutation of the given sets of input.Maybe in some case after n number of times it so happens that a sorted sequence is obtained than it would look like this:"
+];
+// set the array to start at 0
+var i = 0;
+
+var speed = 2000;
+var speed1 = 2000;
+var minSpeed = 3000;
+var maxSpeed = 0;
+
+// create function 'slideShow'
+function slideShow() {
+// creates variable 'div' to load images into a div selected using 'getElementById'
+var div = document.getElementById('slideshowdiv');
+div.innerHTML = '<img src="' + imageArray[i] + '" />';
+var div1 = document.getElementById('slideshowdiv1');
+div1.innerHTML = steps[i];
+
+//increment i by 1
+i++;
+
+// checks if i is greater than or equal to the length
+
+// every 2 seconds change image
+timer = setTimeout('slideShow()', speed);
+if( i == imageArray.length )
+	stopShow();
+};
+function slidenext() {
+// creates variable 'div' to load images into a div selected using 'getElementById'
+i = (i == imageArray.length - 1) ? i : i + 1;
+var div = document.getElementById('slideshowdiv');
+
+div.innerHTML = '<img src="' + imageArray[i] + '" />';
+var div1 = document.getElementById('slideshowdiv1');
+div1.innerHTML = steps[i];
+
+stopShow();
+};
+function slidepre() {
+// creates variable 'div' to load images into a div selected using 'getElementById'
+ i = (i > 0) ? i - 1 : i;
+var div = document.getElementById('slideshowdiv');
+
+div.innerHTML = '<img src="' + imageArray[i] + '" />';
+var div1 = document.getElementById('slideshowdiv1');
+div1.innerHTML = steps[i];
+
+stopShow();
+};
+function displayNextImage() {
+              
+			  timer=setTimeout('slidenext()',500);
+          };
+
+          function displayPreviousImage() {
+             
+			 			  timer=setTimeout('slidepre()',500);
+
+          };
+function stopShow() {
+    clearTimeout(timer);
+};
+function playShow() {
+    if( i >= imageArray.length - 1 )
+	i = 0;
+    timer = setTimeout('slideShow()', speed);
+};
+function increase() {
+  if(speed -100 > maxSpeed )
+    speed = 1500; 
+};
+function decrease() {
+  if(speed +100 <= minSpeed)      
+    speed = 4500;
+};
+function normal() {
+  if(speed < speed1|| speed > speed1)      
+    speed = 3000;
+};
+</script>
+
+<div class="nav1">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-left">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav m-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="secondpage.html">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#tut">Tutorial</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#algo">Algorithm</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#visu">Visualization</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="logout.jsp">Logout</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+</div>
+</br></br>
+<div class="container" style="background-color:#e6ffe6;border-radius:7px;"id="tut"></br>
+<b></b><h2 style="font-size:23px;color:black;text-align:center">Description</h2></b>
+<p class="card-text" style="font-size:17px;" >In computer science, bogosort (also known as permutation sort, stupid sort, 
+slowsort, shotgun sort or monkey sort) is a highly ineffective sorting algorithm based on the generate and test paradigm. 
+The function successively generates permutations of its input until it finds one that is sorted. It is not useful for sorting, 
+but may be used for educational purposes, to contrast it with more efficient algorithms. 
+Two versions of this algorithm exist: a deterministic version that enumerates all permutations until it hits a sorted one,
+ and a randomized version that randomly permutes its input. An analogy for the working of the latter version is to sort a deck 
+ of cards by throwing the deck into the air, picking the cards up at random, and repeating the process until the deck is sorted.
+ Its name is a portmanteau of the words bogus and sort.
+<br>
+<br>
+</p>
+<b></b><h2 style="font-size:23px;color:black;text-align:center">Complexity</h2></b>
+<p class="card-text" style="font-size:17px;" >
+<b>Case 1)</b> Unbounded (randomized version), O((n+1)!)  (Worst case) 
+</br></br>
+<b>Case 2)</b> O((n+1)!) (Average case) 
+</br></br>
+<b>Case 3)</b> O(n) (Best Case)
+
+</p>
+<b></b><h2 style="font-size:23px;color:black;text-align:center">Related Algorithm</h2></b>
+<p class="card-text" style="font-size:17px;" >
+ Gorosort is a sorting algorithm introduced in the 2011 Google Code Jam.As long as the list is not in order, a subset of all 
+ elements is randomly permuted. If this subset is optimally chosen each time this is performed, the expected value of the total 
+ number of times this operation needs to be done is equal to the number of misplaced elements.
+Bogobogosort is an algorithm that was designed not to succeed before the heat death of the universe on any sizable list. It 
+works by recursively calling itself with smaller and smaller copies of the beginning of the list to see if they are sorted. The 
+best case is a single element, which is always sorted. For other cases, it compares the last element to the maximum element from
+ the previous elements in the list. If the last element is greater or equal, it checks if the order of the copy matches the 
+ previous version, copies back if not, and returns. Otherwise, it reshuffles the current copy of the list and goes back to its 
+ recursive check.
+Bozosort is another sorting algorithm based on random numbers. If the list is not in order, it picks two items at random and 
+swaps them, then checks to see if the list is sorted. The running time analysis of a bozosort is more difficult, but some 
+estimates are found in H. Gruber's analysis of "perversely awful" randomized sorting algorithms.O(n!) is found to be the 
+expected average case.
+ </br></br>
+</p>
+</div>
+</br></br>
+<div class="container" style="background-color:#e6ffe6;border-radius:7px;"id="algo"></br>
+<b></b><h1 style="font-size:23px;color:black;text-align:center">Algorithm</h1></b>
+<p class="card-text" style="font-size:17px;" >The algorithm for bogo sort is shown as: 
+</br></br>
+while not isInOrder(deck):</br>
+    shuffle(deck)</br>
+<br>
+<br>
+</p>
+
+</div>
+</br/></br>
+<div class="container" style="background-color:#e6ffe6;border-radius:7px;"id="visu"></br>
+<b></b><h1 style="font-size:23px;color:black;text-align:center">Visualization</h1></b>
+<div class="btn-group">
+
+    <button type="button" class="btn btn-info btn-sm" onclick="decrease()">Slow</button>
+    <button type="button" class="btn btn-default btn-sm" onclick="normal()">Normal</button>
+    <button type="button" class="btn btn-warning btn-sm" onclick="increase()">Fast</button>
+	</div>
+<br>
+<br>
+<div id="slideshowdiv"></div>
+<br>
+<b>Steps :</b>
+<br>
+<div id="slideshowdiv1"></div>
+<div class="change">
+<br>
+<div class="btn-group">
+ <button type="button" class="btn btn-primary btn-sm" onclick="displayPreviousImage()">Previous</button>
+    <button type="button" class="btn btn-danger btn-sm" onclick="stopShow()">Stop</button>
+    <button type="button" class="btn btn-success btn-sm" onclick="playShow()">Play</button>
+	<button type="button" class="btn btn-primary btn-sm" onclick="displayNextImage()">Next</button>
+  </div>
+
+</div>
+<br>
+<br>
+</div>
+<script src="js/jquery.js"></script>
+<!--<script src="//code.jquery.com/jquery.min.js"></script>-->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
